@@ -1,0 +1,18 @@
+{
+    "name": "heyloaylty/hl-phpclient",
+    "description": "php client for heyloyalty rest api",
+    "type": "libary",
+    "license": "mit",
+  "require-dev": {
+    "phpunit/phpunit": "~4.3"
+  },
+    "authors": [
+        {
+            "name": "skourene",
+            "email": "skou.rene@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+  "autoload" :  {"HL-phpclient\\":"src/HL-phpclient/"}
+}
