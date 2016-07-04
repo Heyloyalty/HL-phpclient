@@ -1,5 +1,5 @@
 {
-    "name": "heyloaylty/hl-phpclient",
+    "name": "heyloyalty/hl-phpclient",
     "description": "php client for heyloyalty rest api",
     "type": "libary",
     "license": "mit",
@@ -14,5 +14,9 @@
     ],
     "minimum-stability": "dev",
     "require": {},
-  "autoload" :  {"HL-phpclient\\":"src/HL-phpclient/"}
+  "autoload" :  {
+    "psr-4": {
+      "Phpclient\\": "src/HL-phpclient/"
+    }
+  }
 }

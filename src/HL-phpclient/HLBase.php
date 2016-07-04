@@ -1,5 +1,4 @@
-<?php
-
+<?php namespace  Phpclient;
 /**
  * Class HLBase
  */
@@ -30,11 +29,13 @@ class HLBase
             CURLOPT_POSTFIELDS => http_build_query($post_fields),
             CURLOPT_HTTPHEADER => array(
                 "authorization: Basic " .$this->signature. "",
-                "x-request-timestamp: " .$this->date. ""
+                "x-request-timestamp: " .$this->date. "",
             ),
         ));
-        $response = curl_exec($curl);
-        $response['errors'] = curl_error($curl);
+        $response['response'] = curl_exec($curl);
+        if(curl_errno($curl)) {
+            $response['error'] = curl_error($curl);
+        }
         curl_close($curl);
         return $response;
     }

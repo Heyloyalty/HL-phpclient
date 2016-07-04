@@ -1,4 +1,4 @@
-<?php
+<?php namespace Phpclient;
 
 /**
  * Class HLClient

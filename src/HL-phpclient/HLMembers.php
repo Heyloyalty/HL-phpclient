@@ -1,4 +1,4 @@
-<?php
+<?php namespace Phpclient;
 
 /**
  * Class HLMembers
@@ -12,7 +12,7 @@ class HLMembers extends HLBase
 
     public function getMembers($list_id)
     {
-        $this->endpoint = 'lists'.$list_id.'members';
+        $this->endpoint = 'lists/'.$list_id.'/members';
         return $this->call('GET',$this->endpoint);
     }
 
@@ -25,37 +25,37 @@ class HLMembers extends HLBase
                 ]
             ]
         );
-        $this->endpoint = 'lists'.$list_id.'members';
+        $this->endpoint = 'lists/'.$list_id.'/members';
         return $this->call('GET',$this->endpoint,$filter);
     }
 
     public function getMembersByFilter($list_id, array $filter)
     {
-        $this->endpoint = 'lists'.$list_id.'members';
+        $this->endpoint = 'lists/'.$list_id.'/members';
         return $this->call('GET',$this->endpoint,$filter);
     }
 
     public function getMember($list_id,$member_id)
     {
-        $this->endpoint = 'lists'.$list_id.'members'.$member_id;
+        $this->endpoint = 'lists/'.$list_id.'/members/'.$member_id;
         return $this->call('GET',$this->endpoint);
     }
 
     public function create($list_id, array $fields)
     {
-        $this->endpoint = 'lists'.$list_id.'members';
+        $this->endpoint = 'lists/'.$list_id.'/members';
         return $this->call('POST',$this->endpoint,$fields);
     }
 
     public function update($list_id,$member_id,array $fields)
     {
-        $this->endpoint = 'lists'.$list_id.'members'.$member_id;
+        $this->endpoint = 'lists/'.$list_id.'/members/'.$member_id;
         return $this->call('PUT',$this->endpoint,$fields);
     }
 
     public function delete($list_id,$member_id)
     {
-        $this->endpoint = 'lists'.$list_id.'members'.$member_id;
+        $this->endpoint = '/lists'.$list_id.'/members/'.$member_id;
         return $this->call('DELETE',$this->endpoint);
     }
 
