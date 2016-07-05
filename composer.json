@@ -27,7 +27,7 @@
     "email":"support@heyloyalty.com",
     "wiki":"https://github.com/Heyloyalty/api/wiki",
     "issues":"https://github.com/SkouRene/HL-phpclient/issues",
-    "docs":"https://github.com/SkouRene/HL-phpclient",
+    "docs":"https://github.com/SkouRene/HL-phpclient"
   },
   "minimum-stability": "dev",
   "require": {},
