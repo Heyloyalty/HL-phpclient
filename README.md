@@ -21,3 +21,6 @@ $memberService = new HLMembers($client);
 $members = $memberService->getMembers();
 var_dump($members);
 ```
+
+## Further documentaion
+Look at the code examples in the examples folder
