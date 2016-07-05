@@ -3,7 +3,7 @@
   "description": "php client for heyloyalty rest api",
   "license": "GPL-2.0",
   "homepage": "https://github.com/Heyloyalty/api",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "type": "library",
   "time": "2016-07-05",
   "keywords": [
