@@ -1,6 +1,10 @@
 <?php namespace Phpclient;
 
-class HLAccounts
+/**
+ * Class HLAccounts
+ * @package Phpclient
+ */
+class HLAccounts extends HLBase
 {
     /**
      * HLAccounts constructor.
@@ -10,29 +14,65 @@ class HLAccounts
     {
         $this->setResellerClient($resellerClient);
     }
-
+    
+    /**
+     * @return mixed
+     */
     public function getAccounts()
     {
-
+        $this->endpoint = 'accounts';
+        return $this->call('GET',$this->endpoint);
     }
-
+    
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getAccount($id)
     {
-
+        $this->endpoint = 'accounts/'.$id;
+        return $this->call('GET',$this->endpoint);
     }
-
-    public function create()
+    
+    /**
+     * @param $id
+     * @param $params
+     * @return mixed
+     */
+    public function getAccountUsage($id,$params)
     {
-
+        $this->endpoint = 'accounts/'.$id.'/usage';
+        return $this->call('GET',$this->endpoint,$params);
     }
-
+    
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function create($params)
+    {
+        $this->endpoint = 'accounts/';
+        return $this->call('POST',$this->endpoint,$params);
+    }
+    
+    /**
+     * @param $id
+     * @param $params
+     * @return mixed
+     */
     public function update($id,$params)
     {
-
+        $this->endpoint = 'accounts/'.$id;
+        return $this->call('PUT',$this->endpoint,$params);
     }
-
+    
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function delete($id)
     {
-        
+        $this->endpoint = 'accounts/'.$id;
+        return $this->call('DELETE',$this->endpoint);
     }
 }

@@ -1,5 +1,9 @@
 # HL-phpclient
-Php client for heyloyalty api
+Php client for heyloyalty api.
+
+The client also has methods for using reseller endpoints, [how to become a reseller](http://heyloyalty.com/partner)
+Accounts
+Account users
 
 ## Installation
 The recommended way to install HL-phpclient is through [Composer](https://getcomposer.org)
@@ -7,6 +11,7 @@ The recommended way to install HL-phpclient is through [Composer](https://getcom
 composer require heyloyalty/hl-phpclient
 ```
 ## Simple example
+Api key and secret are required from your [Heyloyalty account](http://heyloyalty.com)
 ```php
 use Phpclient\HLMembers;
 use Phpclient\HLClient;
