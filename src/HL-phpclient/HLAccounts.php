@@ -1,12 +1,13 @@
 <?php namespace Phpclient;
 
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 20/06/16
- * Time: 19:59
- */
 class HLAccounts
 {
-    
+    /**
+     * HLAccounts constructor.
+     * @param HLResellerClient $resellerClient
+     */
+    public function __construct(HLResellerClient $resellerClient)
+    {
+        $this->setResellerClient($resellerClient);
+    }
 }
