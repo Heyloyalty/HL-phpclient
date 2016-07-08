@@ -22,5 +22,5 @@ $members = $memberService->getMembers();
 var_dump($members);
 ```
 
-## Further documentaion
+## Further documentation
 Look at the code examples in the examples folder

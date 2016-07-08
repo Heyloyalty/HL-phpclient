@@ -2,7 +2,7 @@
 /**
  * Class HLBase
  */
-class HLBase
+class HLBase extends HLCurlHandler
 {
     private $signature, $date,$path;
     protected $endpoint;
@@ -14,30 +14,10 @@ class HLBase
      * @param array $post_fields
      * @return mixed
      */
-    protected function call($type,$endpoint,$post_fields = array())
+    protected function call($type,$endpoint,$post_fields = array(),$file = null)
     {
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => self::HOST.$this->path.$endpoint,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => $type,
-            CURLOPT_POSTFIELDS => http_build_query($post_fields),
-            CURLOPT_HTTPHEADER => array(
-                "authorization: Basic " .$this->signature. "",
-                "x-request-timestamp: " .$this->date. "",
-            ),
-        ));
-        $response['response'] = curl_exec($curl);
-        if(curl_errno($curl)) {
-            $response['error'] = curl_error($curl);
-        }
-        curl_close($curl);
-        return $response;
+        $url = self::HOST.$this->path.$endpoint;
+        return $this->makeCall($type,$url,$post_fields,$file,$this->signature,$this->date);
     }
 
     /**
