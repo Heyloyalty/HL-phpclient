@@ -27,7 +27,7 @@
     "issues":"https://github.com/SkouRene/HL-phpclient/issues",
     "docs":"https://github.com/SkouRene/HL-phpclient"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "require": {},
   "autoload": {
     "psr-4": {

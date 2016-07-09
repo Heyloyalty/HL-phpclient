@@ -63,6 +63,12 @@ class HLCurlHandler
         return $response;
     }
     
+    /**
+     * @param $arrays
+     * @param array $new
+     * @param null $prefix
+     * @return array
+     */
     protected function buildOneDimensionArray($arrays, &$new = array(), $prefix = null)
     {
         if (is_object($arrays)) {
