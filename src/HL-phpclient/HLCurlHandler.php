@@ -1,6 +1,4 @@
-<?php
-
-namespace Phpclient;
+<?php namespace Phpclient;
 
 /**
  * Class HLCurlHandler
@@ -33,20 +31,21 @@ class HLCurlHandler
         $postFields = $this->buildOneDimensionArray($postFields);
         
         if (!is_null($file)) {
-            $postFields['file'] = $this->getFile($file);
+            $postFields['file'] = curl_file_create($file, 'text/csv', 'file');
             array_push($headers, 'Content-type: multipart/form-data');
         }
         
         switch ($requestType) {
             case 'DELETE':
             case 'GET':
-                curl_setopt($curl, CURLOPT_URL, $url . http_build_query($postFields));
+                curl_setopt($curl, CURLOPT_URL, $url.'?'.http_build_query($postFields));
                 curl_setopt($curl, CURLOPT_HTTPGET, true);
                 break;
             case 'PUT':
             case 'POST':
                 curl_setopt($curl, CURLOPT_URL, $url);
                 curl_setopt($curl, CURLOPT_POST, true);
+                curl_setopt($curl,CURLOPT_SAFE_UPLOAD,false);
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $postFields);
                 break;
         }
@@ -64,7 +63,7 @@ class HLCurlHandler
         return $response;
     }
     
-    private function buildOneDimensionArray($arrays, &$new = array(), $prefix = null)
+    protected function buildOneDimensionArray($arrays, &$new = array(), $prefix = null)
     {
         if (is_object($arrays)) {
             $arrays = get_object_vars($arrays);
@@ -73,16 +72,11 @@ class HLCurlHandler
         foreach ($arrays AS $key => $value) {
             $k = isset($prefix) ? $prefix . '[' . $key . ']' : $key;
             if (is_array($value) OR is_object($value)) {
-                buildOneDimensionArray($value, $new, $k);
+                $this->buildOneDimensionArray($value, $new, $k);
             } else {
                 $new[$k] = $value;
             }
         }
         return $new;
-    }
-    
-    private function getFile($file)
-    {
-        return curl_file_create($file, 'text/csv', 'file');
     }
 }
