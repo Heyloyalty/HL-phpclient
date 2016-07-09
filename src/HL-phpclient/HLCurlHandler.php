@@ -37,11 +37,19 @@ class HLCurlHandler
         
         switch ($requestType) {
             case 'DELETE':
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST,'DELETE');
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $postFields);
+                break;
             case 'GET':
                 curl_setopt($curl, CURLOPT_URL, $url.'?'.http_build_query($postFields));
                 curl_setopt($curl, CURLOPT_HTTPGET, true);
                 break;
             case 'PUT':
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST,'PUT');
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $postFields);
+                break;
             case 'POST':
                 curl_setopt($curl, CURLOPT_URL, $url);
                 curl_setopt($curl, CURLOPT_POST, true);
