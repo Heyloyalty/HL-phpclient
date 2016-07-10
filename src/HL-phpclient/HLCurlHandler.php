@@ -39,7 +39,7 @@ class HLCurlHandler
             case 'DELETE':
                 curl_setopt($curl, CURLOPT_URL, $url);
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST,'DELETE');
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $postFields);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postFields));
                 break;
             case 'GET':
                 curl_setopt($curl, CURLOPT_URL, $url.'?'.http_build_query($postFields));
@@ -48,7 +48,7 @@ class HLCurlHandler
             case 'PUT':
                 curl_setopt($curl, CURLOPT_URL, $url);
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST,'PUT');
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $postFields);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postFields));
                 break;
             case 'POST':
                 curl_setopt($curl, CURLOPT_URL, $url);
