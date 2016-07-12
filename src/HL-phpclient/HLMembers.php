@@ -15,21 +15,21 @@ class HLMembers extends HLBase
     }
     
     /**
-     * @param $list_id
+     * @param $listId
      * @return mixed
      */
-    public function getMembers($list_id)
+    public function getMembers($listId)
     {
-        $this->endpoint = 'lists/'.$list_id.'/members';
+        $this->endpoint = 'lists/'.$listId.'/members';
         return $this->call('GET',$this->endpoint);
     }
     
     /**
-     * @param $list_id
+     * @param $listId
      * @param $email
      * @return mixed
      */
-    public function getMemberByEmail($list_id,$email)
+    public function getMemberByEmail($listId,$email)
     {
         $filter = array(
             'filter' => [
@@ -38,63 +38,63 @@ class HLMembers extends HLBase
                 ]
             ]
         );
-        $this->endpoint = 'lists/'.$list_id.'/members';
+        $this->endpoint = 'lists/'.$listId.'/members';
         return $this->call('GET',$this->endpoint,$filter);
     }
     
     /**
-     * @param $list_id
+     * @param $listId
      * @param array $filter
      * @return mixed
      */
-    public function getMembersByFilter($list_id, array $filter)
+    public function getMembersByFilter($listId, array $filter)
     {
-        $this->endpoint = 'lists/'.$list_id.'/members';
+        $this->endpoint = 'lists/'.$listId.'/members';
         return $this->call('GET',$this->endpoint,$filter);
     }
     
     /**
-     * @param $list_id
-     * @param $member_id
+     * @param $listId
+     * @param $memberId
      * @return mixed
      */
-    public function getMember($list_id,$member_id)
+    public function getMember($listId,$memberId)
     {
-        $this->endpoint = 'lists/'.$list_id.'/members/'.$member_id;
+        $this->endpoint = 'lists/'.$listId.'/members/'.$memberId;
         return $this->call('GET',$this->endpoint);
     }
     
     /**
-     * @param $list_id
+     * @param $listId
      * @param array $fields
      * @return mixed
      */
-    public function create($list_id, array $fields)
+    public function create($listId, array $fields)
     {
-        $this->endpoint = 'lists/'.$list_id.'/members';
+        $this->endpoint = 'lists/'.$listId.'/members';
         return $this->call('POST',$this->endpoint,$fields);
     }
     
     /**
-     * @param $list_id
-     * @param $member_id
+     * @param $listId
+     * @param $memberId
      * @param array $fields
      * @return mixed
      */
-    public function update($list_id,$member_id,array $fields)
+    public function update($listId,$memberId,array $fields)
     {
-        $this->endpoint = 'lists/'.$list_id.'/members/'.$member_id;
+        $this->endpoint = 'lists/'.$listId.'/members/'.$memberId;
         return $this->call('PUT',$this->endpoint,$fields);
     }
     
     /**
-     * @param $list_id
-     * @param $member_id
+     * @param $listId
+     * @param $memberId
      * @return mixed
      */
-    public function delete($list_id,$member_id)
+    public function delete($listId,$memberId)
     {
-        $this->endpoint = '/lists'.$list_id.'/members/'.$member_id;
+        $this->endpoint = '/lists'.$listId.'/members/'.$memberId;
         return $this->call('DELETE',$this->endpoint);
     }
 }

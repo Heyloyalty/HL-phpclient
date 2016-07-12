@@ -25,12 +25,12 @@ class HLLists extends HLBase
     }
     
     /**
-     * @param $list_id
+     * @param $listId
      * @return mixed
      */
-    public function getList($list_id)
+    public function getList($listId)
     {
-        $this->endpoint = 'lists/'.$list_id;
+        $this->endpoint = 'lists/'.$listId;
         return $this->call('GET',$this->endpoint);
     }
 
@@ -45,23 +45,23 @@ class HLLists extends HLBase
     }
 
     /**
-     * @param $list_id
+     * @param $listId
      * @param $params
      * @return mixed
      */
-    public function update($list_id,$params)
+    public function update($listId,$params)
     {
-        $this->endpoint = 'lists/'.$list_id;
+        $this->endpoint = 'lists/'.$listId;
         return $this->call('PUT',$this->endpoint,$params);
     }
 
     /**
-     * @param $list_id
+     * @param $listId
      * @return mixed
      */
-    public function delete($list_id)
+    public function delete($listId)
     {
-        $this->endpoint = 'lists/'.$list_id;
+        $this->endpoint = 'lists/'.$listId;
         return $this->call('DELETE',$this->endpoint);
     }
 }
