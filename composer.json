@@ -10,8 +10,11 @@
     "email",
     "marketing"
   ],
+  "require" : {
+    "php": ">=5.3.3"
+  },
   "require-dev": {
-    "phpunit/phpunit": "~4.3"
+    "phpunit/phpunit": "~4|~5"
   },
   "authors": [
     {
@@ -23,12 +26,10 @@
   ],
   "support": {
     "email":"support@heyloyalty.com",
-    "wiki":"https://github.com/Heyloyalty/api/wiki",
     "issues":"https://github.com/SkouRene/HL-phpclient/issues",
     "docs":"https://github.com/SkouRene/HL-phpclient"
   },
   "minimum-stability": "stable",
-  "require": {},
   "autoload": {
     "psr-4": {
       "Phpclient\\": "src/HL-phpclient/"
