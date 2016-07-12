@@ -14,5 +14,3 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
-script:
- build/logs/clover.xml && CODECLIMATE_REPO_TOKEN=a2bd599d6b818c89d627730abf660dbb78809acd20f78da3c0b28cfa3493b101 vendor/bin/test-reporter
