@@ -3,12 +3,13 @@ require('vendor/autoload.php');
 use Phpclient\HLClient;
 use Phpclient\HLMembers;
 /**
- * setup service
+ * Basic examples showing have to use member endpoints to read, create, update and delete.
+ * You will need to fill out the variables below to test these examples.
  */
-$api_key = 'DTd7K5yfQFgyLcTS';
-$api_secret = 'zo8z8pRy0bRKqMxojcq0t1jVjXzE623L';
-$list_id = 2553;
-$member_id = '582e0e1a-2f18-4956-b00f-43db5d48bc0a';
+$api_key = 'your-api-key';
+$api_secret = 'your-api-secret';
+$list_id = 'your list id';
+$member_id = 'your-member-id';
 $client = new HLClient($api_key,$api_secret);
 $memberService = new HLMembers($client);
 
@@ -47,7 +48,7 @@ var_dump($result);
 
 // create a member on a list
 $fields = [
-    'email' => 'skou.rene123@gmail.com'
+    'email' => 'your-email'
 ];
 $result = $memberService->create($list_id,$fields);
 var_dump('create a member on a list');
@@ -55,13 +56,13 @@ var_dump($result);
 
 // update a member on a list
 $fields = [
-    'email' => 'skou.rene12@gmail.com'
+    'email' => 'your-email'
 ];
 $result = $memberService->update($list_id,$member_id,$fields);
 var_dump('update a member on a list');
 var_dump($result);
 
 // delete a member
-$result = $memberService->delete($list_id,'341530ea-2a46-499e-94c2-d531950b3ef5');
+$result = $memberService->delete($list_id,'your-member-id-here');
 var_dump('delete member on a list');
 var_dump($result);
