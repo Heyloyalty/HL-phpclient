@@ -1,3 +1,4 @@
+<img src="https://travis-ci.org/SkouRene/HL-phpclient.svg?branch=master" />
 # HL-phpclient
 Php client for heyloyalty api.
 
