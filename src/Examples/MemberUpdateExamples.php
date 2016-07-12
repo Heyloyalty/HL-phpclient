@@ -7,7 +7,7 @@ use Phpclient\HLMembers;
  */
 $api_key = 'api-key';
 $api_secret = 'api-secret';
-$list_id = 3753;
+$list_id = 123;
 $member_id = 'member-id';
 $client = new HLClient($api_key,$api_secret);
 $memberService = new HLMembers($client);
