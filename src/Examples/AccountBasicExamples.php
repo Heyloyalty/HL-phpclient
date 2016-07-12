@@ -1,6 +1,6 @@
 <?php
 require('vendor/autoload.php');
-use Phpclient\HLClient;
+use Phpclient\HLResellerClient;
 use Phpclient\HLAccounts;
 /**
  * Basic examples showing have to use account endpoints to read, create, update and delete.
@@ -11,7 +11,7 @@ use Phpclient\HLAccounts;
 $api_key = 'your-api-key';
 $api_secret = 'your-api-secret';
 $account_id = 'your-account-id';
-$client = new HLClient($api_key,$api_secret);
+$client = new HLResellerClient($api_key,$api_secret);
 $accountService = new HLAccounts($client);
 
 /**
