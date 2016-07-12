@@ -4,6 +4,12 @@ Php client for heyloyalty api.
 The client also has methods for using reseller endpoints, [how to become a reseller](http://heyloyalty.com/partner)
 Accounts
 Account users
+This client contains all methods for interacting with Heyloyalty api except the import method on lists, it will be included along with examples soon.
+
+Roadmap:
+* add undocumented methods for resellers.
+* add more examples.
+* add unittests for all methods.
 
 ## Installation
 The recommended way to install HL-phpclient is through [Composer](https://getcomposer.org)
