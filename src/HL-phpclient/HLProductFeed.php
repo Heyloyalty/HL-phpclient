@@ -11,7 +11,7 @@
  * Class HLProductFeed
  * @package Phpclient
  */
-class HLProductFeed
+class HLProductFeed extends HLBase
 {
     /**
      * HLProductFeed constructor.
@@ -66,7 +66,7 @@ class HLProductFeed
     }
 
     /**
-     * 
+     *
      * @param $id
      * @param $params
      * @return mixed
