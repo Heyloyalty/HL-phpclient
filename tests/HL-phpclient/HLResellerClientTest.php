@@ -22,6 +22,6 @@ class HLResellerClientTest extends \PHPUnit_Framework_TestCase
     {
         $resellerClient = new HLResellerClient('key','secret');
         $this->assertEquals('key',$resellerClient->key);
-        $this->assertEquals('key',$resellerClient->secret);
+        $this->assertEquals('secret',$resellerClient->secret);
     }
 }
