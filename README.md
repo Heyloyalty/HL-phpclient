@@ -1,4 +1,5 @@
-<img src="https://travis-ci.org/SkouRene/HL-phpclient.svg?branch=master" /> [![Code Climate](https://codeclimate.com/github/SkouRene/HL-phpclient/badges/gpa.svg)](https://codeclimate.com/github/SkouRene/HL-phpclient)
+<img src="https://travis-ci.org/SkouRene/HL-phpclient.svg?branch=master" /> [![Code Climate](https://codeclimate.com/github/SkouRene/HL-phpclient/badges/gpa.svg)](https://codeclimate.com/github/SkouRene/HL-phpclient) [![codecov](https://codecov.io/gh/SkouRene/HL-phpclient/branch/master/graph/badge.svg)](https://codecov.io/gh/SkouRene/HL-phpclient)
+
 # HL-phpclient
 Php client for heyloyalty api.
 
