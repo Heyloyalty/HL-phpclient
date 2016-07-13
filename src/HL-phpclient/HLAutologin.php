@@ -24,6 +24,7 @@ class HLAutologin extends HLBase
     }
 
     /**
+     * @codeCoverageIgnore
      * Gets a login token
      * Usage: Https://app.heyloyalty.com/admin/accounts/{id}/autologin?token=kqFKsKDJN7aCSLgH.
      * @param $accountId

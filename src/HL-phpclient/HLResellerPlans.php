@@ -24,6 +24,7 @@ class HLResellerPlans extends HLBase
     }
 
     /**
+     * @codeCoverageIgnore
      * @return mixed
      */
     public function getResellerPlans()
@@ -33,6 +34,7 @@ class HLResellerPlans extends HLBase
     }
 
     /**
+     * @codeCoverageIgnore
      * @param $accountId
      * @param $params
      * @return mixed

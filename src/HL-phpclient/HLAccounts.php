@@ -24,6 +24,7 @@ class HLAccounts extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @return mixed
      */
     public function getAccounts()
@@ -33,6 +34,7 @@ class HLAccounts extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @return mixed
      */
@@ -43,6 +45,7 @@ class HLAccounts extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @param $params
      * @return mixed
@@ -54,6 +57,7 @@ class HLAccounts extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $params
      * @return mixed
      */
@@ -64,6 +68,7 @@ class HLAccounts extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @param $params
      * @return mixed
@@ -75,6 +80,7 @@ class HLAccounts extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @return mixed
      */

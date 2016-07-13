@@ -23,6 +23,7 @@ class HLAccountUsers extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $accountId
      * @return mixed
      */
@@ -33,6 +34,7 @@ class HLAccountUsers extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @param $accountId
      * @return mixed
@@ -44,6 +46,7 @@ class HLAccountUsers extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $accountId
      * @param $params
      * @return mixed
@@ -55,6 +58,7 @@ class HLAccountUsers extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $accountId
      * @param $id
      * @param $params
@@ -67,6 +71,7 @@ class HLAccountUsers extends HLBase
     }
     
     /**
+     * @codeCoverageIgnore
      * @param $accountId
      * @param $id
      * @return mixed

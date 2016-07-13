@@ -22,14 +22,19 @@ class HLAbandonedBasket extends HLBase
     {
         $this->setClient($client);
     }
-
+    
+    /**
+     * @codeCoverageIgnore
+     */
     public function getAbandonedBasket($listId)
     {
         $this->endpoint  = 'lists/'.$listId.'/options/bi';
         $this->call('GET',$this->endpoint);
     }
-
-
+    
+    /**
+     * @codeCoverageIgnore
+     */
     Public function update($listId,$params)
     {
         $this->endpoint = 'lists/'.$listId.'/options/bi';

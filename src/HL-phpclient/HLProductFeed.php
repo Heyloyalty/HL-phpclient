@@ -23,6 +23,7 @@ class HLProductFeed
     }
 
     /**
+     * @codeCoverageIgnore
      * @return mixed
      */
     public function getProductFeeds()
@@ -32,6 +33,7 @@ class HLProductFeed
     }
 
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @return mixed
      */
@@ -42,6 +44,7 @@ class HLProductFeed
     }
 
     /**
+     * @codeCoverageIgnore
      * @param $params
      * @return mixed
      */
@@ -52,6 +55,7 @@ class HLProductFeed
     }
 
     /**
+     * @codeCoverageIgnore
      * @param $params
      * @return mixed
      */
@@ -62,6 +66,7 @@ class HLProductFeed
     }
 
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @param $params
      * @return mixed
@@ -73,6 +78,7 @@ class HLProductFeed
     }
 
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @param $params
      * @return mixed
@@ -84,6 +90,7 @@ class HLProductFeed
     }
 
     /**
+     * @codeCoverageIgnore
      * @param $id
      * @return mixed
      */
