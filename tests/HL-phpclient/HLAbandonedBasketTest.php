@@ -10,7 +10,7 @@ class HLAbandonedBasketTest extends \PHPUnit_Framework_TestCase
     }
     public function testGetAbandonedBasket()
     {
-        $result = $this->object->getAbandonedBasket(12321234);
+        $result = $this->object->getAbandonedBasket(1232);
         $this->assertArrayHasKey('response',$result);
     }
     

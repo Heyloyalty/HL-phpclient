@@ -26,7 +26,7 @@ class HLAbandonedBasket extends HLBase
     public function getAbandonedBasket($listId)
     {
         $this->endpoint  = 'lists/'.$listId.'/options/bi';
-        $this->call('GET',$this->endpoint);
+        return $this->call('GET',$this->endpoint);
     }
     
 
