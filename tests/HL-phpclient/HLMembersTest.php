@@ -25,9 +25,61 @@ class HLMembersTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers HLMembers::getMembers()
      */
+    public function testGetMembersWithNOAuthentication()
+    {
+        $client = new HLClient('asda','sadas');
+        $this->object = new HLMembers($client);
+        $result = $this->object->getMembers(12);
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('401',json_decode($result['response'],true)['code']);
+    }
+    /**
+     * @covers HLMembers::getMembers()
+     */
     public function testGetMembers()
     {
         $result = $this->object->getMembers(3753);
         $this->assertArrayHasKey('response',$result);
+        $this->assertArrayHasKey('members',json_decode($result['response'],true));
+    }
+
+    /**
+     * @covers HLMembers::getMembers()
+     */
+    public function testGetMembersWithListIdDontExist()
+    {
+        $result = $this->object->getMembers(1300);
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
+
+    /**
+     * @covers HLMembers::getMember()
+     */
+    public function testgetMemberWithIdDontExist()
+    {
+        $result = $this->object->getMember(12,'12311');
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
+
+    /**
+     * @covers HLMembers::getMemberByEmail()
+     */
+    public function testGetMemberByEmailThatDontExist()
+    {
+        $result = $this->object->getMemberByEmail(12,'some@mail.dk');
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
+
+    /**
+     * @covers HLMembers::create()
+     */
+    public function testCreateMemberWithMissingList()
+    {
+        $result = $this->object->create(12,array());
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
     }
 }
