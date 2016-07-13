@@ -16,16 +16,23 @@ class HLAbandonedBasket extends HLBase
     
     /**
      * HLAbandonedBasket constructor.
-     * @param HLResellerClient $resellerClient
+     * @param HLClient $client
      */
-    public function __construct(HLResellerClient $resellerClient)
+    public function __construct(HLClient $client)
     {
-        $this->setResellerClient($resellerClient);
+        $this->setClient($client);
     }
 
     public function getAbandonedBasket($listId)
     {
         $this->endpoint  = 'lists/'.$listId.'/options/bi';
         $this->call('GET',$this->endpoint);
+    }
+
+
+    Public function update($listId,$params)
+    {
+        $this->endpoint = 'lists/'.$listId.'/options/bi';
+        return $this->call('PUT',$this->endpoint,$params);
     }
 }
