@@ -80,4 +80,11 @@ class HLMembersTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('response',$result);
         $this->assertEquals('404',json_decode($result['response'],true)['code']);
     }
+
+    public function testMemberByFilter()
+    {
+        $result = $this->object->getMembersByFilter(12,array());
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
 }

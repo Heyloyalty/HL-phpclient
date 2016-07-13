@@ -35,4 +35,25 @@ class HLListsTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('response',$result);
         $this->assertEquals('404',json_decode($result['response'],true)['code']);
     }
+
+    public function testCreateWithMissingList()
+    {
+        $result = $this->object->create(array());
+        $this->assertArrayHasKey('response',$result);
+        $this->assertArrayHasKey('error',json_decode($result['response'],true));
+    }
+
+    public function testUpdateWithMissingList()
+    {
+        $result = $this->object->update(12,array());
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
+
+    public function testDeleteWithMissingList()
+    {
+        $result = $this->object->delete(12);
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
 }
