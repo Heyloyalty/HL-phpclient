@@ -70,7 +70,6 @@ class HLMembersTest extends \PHPUnit_Framework_TestCase
     public function testUpdateMemberWithMissingList()
     {
         $result = $this->object->update(12,'member-id',array());
-        var_dump($result);
         $this->assertArrayHasKey('response',$result);
         $this->assertEquals('404',json_decode($result['response'],true)['code']);
     }
