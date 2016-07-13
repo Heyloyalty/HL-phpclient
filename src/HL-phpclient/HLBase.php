@@ -1,4 +1,12 @@
 <?php namespace  Phpclient;
+    /*
+         * This file is part of the hl-phpclient package.
+         *
+         * (c) René Skou <skou.rene@gmail.com>
+         *
+         * For the full copyright and license information, please view the LICENSE
+         * file that was distributed with this source code.
+         */
 /**
  * Class HLBase
  */
@@ -11,13 +19,13 @@ class HLBase extends HLCurlHandler
     /**
      * @param $type
      * @param $endpoint
-     * @param array $post_fields
+     * @param array $postFields
      * @return mixed
      */
-    protected function call($type,$endpoint,$post_fields = array(),$file = null)
+    protected function call($type,$endpoint,$postFields = array(),$file = null)
     {
         $url = self::HOST.$this->path.$endpoint;
-        return $this->makeCall($type,$url,$post_fields,$file,$this->signature,$this->date);
+        return $this->makeCall($type,$url,$postFields,$file,$this->signature,$this->date);
     }
 
     /**

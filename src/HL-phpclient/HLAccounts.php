@@ -1,5 +1,13 @@
 <?php namespace Phpclient;
-
+    
+    /*
+         * This file is part of the hl-phpclient package.
+         *
+         * (c) René Skou <skou.rene@gmail.com>
+         *
+         * For the full copyright and license information, please view the LICENSE
+         * file that was distributed with this source code.
+         */
 /**
  * Class HLAccounts
  * @package Phpclient
@@ -21,7 +29,7 @@ class HLAccounts extends HLBase
     public function getAccounts()
     {
         $this->endpoint = 'accounts';
-        return $this->call('GET',$this->endpoint);
+        return $this->call('GET', $this->endpoint);
     }
     
     /**
@@ -30,8 +38,8 @@ class HLAccounts extends HLBase
      */
     public function getAccount($id)
     {
-        $this->endpoint = 'accounts/'.$id;
-        return $this->call('GET',$this->endpoint);
+        $this->endpoint = 'accounts/' . $id;
+        return $this->call('GET', $this->endpoint);
     }
     
     /**
@@ -39,10 +47,10 @@ class HLAccounts extends HLBase
      * @param $params
      * @return mixed
      */
-    public function getAccountUsage($id,$params)
+    public function getAccountUsage($id, $params)
     {
-        $this->endpoint = 'accounts/'.$id.'/usage';
-        return $this->call('GET',$this->endpoint,$params);
+        $this->endpoint = 'accounts/' . $id . '/usage';
+        return $this->call('GET', $this->endpoint, $params);
     }
     
     /**
@@ -52,7 +60,7 @@ class HLAccounts extends HLBase
     public function create($params)
     {
         $this->endpoint = 'accounts/';
-        return $this->call('POST',$this->endpoint,$params);
+        return $this->call('POST', $this->endpoint, $params);
     }
     
     /**
@@ -60,10 +68,10 @@ class HLAccounts extends HLBase
      * @param $params
      * @return mixed
      */
-    public function update($id,$params)
+    public function update($id, $params)
     {
-        $this->endpoint = 'accounts/'.$id;
-        return $this->call('PUT',$this->endpoint,$params);
+        $this->endpoint = 'accounts/' . $id;
+        return $this->call('PUT', $this->endpoint, $params);
     }
     
     /**
@@ -72,7 +80,7 @@ class HLAccounts extends HLBase
      */
     public function delete($id)
     {
-        $this->endpoint = 'accounts/'.$id;
-        return $this->call('DELETE',$this->endpoint);
+        $this->endpoint = 'accounts/' . $id;
+        return $this->call('DELETE', $this->endpoint);
     }
 }

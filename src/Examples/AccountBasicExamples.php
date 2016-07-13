@@ -1,3 +1,11 @@
+/*
+* This file is part of the hl-phpclient package.
+*
+* (c) René Skou <skou.rene@gmail.com>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 <?php
 require('vendor/autoload.php');
 use Phpclient\HLResellerClient;
@@ -8,10 +16,10 @@ use Phpclient\HLAccounts;
  *
  * You will need to be a reseller to use it
  */
-$api_key = 'your-api-key';
-$api_secret = 'your-api-secret';
-$account_id = 'your-account-id';
-$client = new HLResellerClient($api_key,$api_secret);
+$apiKey = 'your-api-key';
+$apiSecret = 'your-api-secret';
+$accountId = 'your-account-id';
+$client = new HLResellerClient($apiKey,$apiSecret);
 $accountService = new HLAccounts($client);
 
 /**
@@ -22,7 +30,7 @@ var_dump($accountService->getAccounts());
 /**
  * Get a specific account.
  */
-var_dump($accountService->getAccount($account_id));
+var_dump($accountService->getAccount($accountId));
 
 /**
  * Get usage for an account.
@@ -31,7 +39,7 @@ $params = array(
     'from' => '2016-06-01 00:00:00',
     'to' => '2016-06-31 23:59:59'
 );
-var_dump($accountService->getAccountUsage($account_id,$params));
+var_dump($accountService->getAccountUsage($accountId,$params));
 
 /**
  * Create an account.
@@ -57,20 +65,20 @@ var_dump($accountService->create($params));
  */
 $params = array(
     'name' => 'my account name',
-    'firstname'=> 'my firstname',
-    'lastname' => 'my lastname',
-    'mobile' => 00000000,
-    'phone' => 00000000,
-    'address' => 'my address',
-    'address_2' => 'me second address',
-    'zipcode' => '8000',
-    'city' => 'my city name',
-    'cvr_no' => 12345678,
-    'type' => 1
+    'firstname'=> 'another firstname',
+    'lastname' => 'another lastname',
+    'mobile' => 11111111,
+    'phone' => 11111111,
+    'address' => 'another address',
+    'address_2' => 'another second address',
+    'zipcode' => '8200',
+    'city' => 'another city name',
+    'cvr_no' => 87654321,
+    'type' => 2
 );
-var_dump($accountService->update($account_id,$params));
+var_dump($accountService->update($accountId,$params));
 
 /**
  * Delete an account.
  */
-var_dump($accountService->delete($account_id));
+var_dump($accountService->delete($accountId));

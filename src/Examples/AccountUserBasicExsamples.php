@@ -1,3 +1,11 @@
+/*
+* This file is part of the hl-phpclient package.
+*
+* (c) René Skou <skou.rene@gmail.com>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 <?php
 require('vendor/autoload.php');
 use Phpclient\HLResellerClient;
@@ -8,22 +16,22 @@ use Phpclient\HLAccountUsers;
  *
  * You will need to be a reseller to use it
  */
-$api_key = 'your-api-key';
-$api_secret = 'your-api-secret';
-$account_id = 'your-account-id';
-$user_id = 'your-user-id';
-$client = new HLResellerClient($api_key,$api_secret);
+$apiKey = 'your-api-key';
+$apiSecret = 'your-api-secret';
+$accountId = 'your-account-id';
+$userId = 'your-user-id';
+$client = new HLResellerClient($apiKey,$apiSecret);
 $accountUserService = new HLAccountUsers($client);
 
 /**
  * Get all users for an account.
  */
-var_dump($accountUserService->getUsers($account_id));
+var_dump($accountUserService->getUsers($accountId));
 
 /**
  * Get user for an account.
  */
-var_dump($accountUserService->getUser($user_id,$account_id));
+var_dump($accountUserService->getUser($userId,$accountId));
 
 /**
  * Create a user on an account.
@@ -33,19 +41,19 @@ $params = array(
     'email'=> 'my email',
     'password' => 'my password'
 );
-var_dump($accountUserService->create($account_id,$params));
+var_dump($accountUserService->create($accountId,$params));
 
 /**
  * Update a user on an account.
  */
 $params = array(
     'name' => 'my name',
-    'email'=> 'my email',
-    'password' => 'my password'
+    'email'=> 'another email',
+    'password' => 'another password'
 );
-var_dump($accountUserService->update($account_id,$user_id,$params));
+var_dump($accountUserService->update($accountId,$userId,$params));
 
 /**
  * Delete a user on an account.
  */
-var_dump($accountUserService->delete($account_id,$user_id));
+var_dump($accountUserService->delete($accountId,$userId));

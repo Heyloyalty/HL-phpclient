@@ -1,3 +1,11 @@
+/*
+* This file is part of the hl-phpclient package.
+*
+* (c) René Skou <skou.rene@gmail.com>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 <?php
 require('vendor/autoload.php');
 use Phpclient\HLClient;
@@ -6,10 +14,10 @@ use Phpclient\HLProductFeed;
  * Basic examples showing have to use product feed and product feed mapping endpoints to read, create, update and delete.
  * You will need to fill out the variables below to test these examples.
  */
-$api_key = 'your-api-key';
-$api_secret = 'your-api-secret';
-$productfeed_id = 'your-product-feed-id';
-$client = new HLClient($api_key,$api_secret);
+$apiKey = 'your-api-key';
+$apiSecret = 'your-api-secret';
+$productFeedId = 'your-product-feed-id';
+$client = new HLClient($apiKey,$apiSecret);
 $feedService = new HLProductFeed($client);
 
 /**
@@ -20,7 +28,7 @@ var_dump($feedService->getProductFeeds());
 /**
  * Get a specific product feed mapping.
  */
-var_dump($feedService->getProductFeedMapping($productfeed_id));
+var_dump($feedService->getProductFeedMapping($productFeedId));
 
 /**
  * Create a product feed.
@@ -40,13 +48,13 @@ $params = array(
     'name' => 'my product feed name',
     'url' => 'url-to-your-productfeed'
 );
-var_dump($feedService->update($productfeed_id,$params));
+var_dump($feedService->update($productFeedId,$params));
 
 /**
  * Delete a product feed.
  */
 
-var_dump($feedService->delete($productfeed_id));
+var_dump($feedService->delete($productFeedId));
 
 /**
  * Create a product feed mapping.
@@ -87,33 +95,4 @@ var_dump($feedService->createMapping($params));
 /**
  * Update a product feed mapping.
  */
-
-$params = array(
-    'product_feed_id' => 1,
-    'feed_type' => 'json',
-    'search_field' => 'name',
-    'productid' => 'productid',
-    'name'=> 'productname',
-    'url'=> 'product_url',
-    'originalPrice' => 'orig_price',
-    'salePrice' => 'sale_price',
-    'discount' => 'product_discount',
-    'description' => 'description',
-    'image_url' => 'img_url',
-    'currency' => 'product_currency',
-    'categoryName' => 'cat_name',
-    'categoryid' => 'cat_id',
-    'inStock' => 'instock',
-    'customField1' => '',
-    'customField2' => '',
-    'customField3' => '',
-    'customField4' => '',
-    'customField5' => '',
-    'customField6' => '',
-    'customField7' => '',
-    'customField8' => '',
-    'customField9' => '',
-    'customField10' => ''
-
-);
-var_dump($feedService->updateMapping($productfeed_id,$params));
+var_dump($feedService->updateMapping($productFeedId,$params));

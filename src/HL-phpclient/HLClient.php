@@ -1,5 +1,12 @@
 <?php namespace Phpclient;
-
+    /*
+         * This file is part of the hl-phpclient package.
+         *
+         * (c) René Skou <skou.rene@gmail.com>
+         *
+         * For the full copyright and license information, please view the LICENSE
+         * file that was distributed with this source code.
+         */
 /**
  * Class HLClient
  */
@@ -9,12 +16,12 @@ class HLClient
     
     /**
      * HLClient constructor.
-     * @param $api_key
-     * @param $api_secret
+     * @param $apiKey
+     * @param $apiSecret
      */
-    public function __construct($api_key,$api_secret)
+    public function __construct($apiKey,$apiSecret)
     {
-        $this->key = $api_key;
-        $this->secret = $api_secret;
+        $this->key = $apiKey;
+        $this->secret = $apiSecret;
     }
 }

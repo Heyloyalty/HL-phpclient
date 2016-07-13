@@ -1,3 +1,11 @@
+/*
+* This file is part of the hl-phpclient package.
+*
+* (c) René Skou <skou.rene@gmail.com>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 <?php
 require('vendor/autoload.php');
 use Phpclient\HLClient;
@@ -5,11 +13,11 @@ use Phpclient\HLMembers;
 /**
  * Member update exsamples,showing how you can update members when you have difference fields
  */
-$api_key = 'api-key';
-$api_secret = 'api-secret';
-$list_id = 123;
-$member_id = 'member-id';
-$client = new HLClient($api_key,$api_secret);
+$apiKey = 'api-key';
+$apiSecret = 'api-secret';
+$listId = 123;
+$memberId = 'member-id';
+$client = new HLClient($apiKey,$apiSecret);
 $memberService = new HLMembers($client);
 
 /**
@@ -41,6 +49,6 @@ $fields = array(
     'last_buy' => '2016-07-12' //date
 );
 
-$result = $memberService->update($list_id,$member_id,$fields);
+$result = $memberService->update($listId,$memberId,$fields);
 var_dump('update member with multi choice');
 var_dump($result);

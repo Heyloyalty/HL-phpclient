@@ -1,5 +1,12 @@
 <?php namespace Phpclient;
-
+    /*
+         * This file is part of the hl-phpclient package.
+         *
+         * (c) René Skou <skou.rene@gmail.com>
+         *
+         * For the full copyright and license information, please view the LICENSE
+         * file that was distributed with this source code.
+         */
 /**
  * Class HLAccountUsers
  * @package Phpclient
@@ -16,57 +23,57 @@ class HLAccountUsers extends HLBase
     }
     
     /**
-     * @param $account_id
+     * @param $accountId
      * @return mixed
      */
-    public function getUsers($account_id)
+    public function getUsers($accountId)
     {
-        $this->endpoint = 'accounts/'.$account_id.'users';
+        $this->endpoint = 'accounts/'.$accountId.'users';
         return $this->call('GET',$this->endpoint);
     }
     
     /**
      * @param $id
-     * @param $account_id
+     * @param $accountId
      * @return mixed
      */
-    public function getUser($id,$account_id)
+    public function getUser($id,$accountId)
     {
-        $this->endpoint = 'accounts/'.$account_id.'users'.$id;
+        $this->endpoint = 'accounts/'.$accountId.'users'.$id;
         return $this->call('GET',$this->endpoint);
     }
     
     /**
-     * @param $account_id
+     * @param $accountId
      * @param $params
      * @return mixed
      */
-    public function create($account_id,$params)
+    public function create($accountId,$params)
     {
-        $this->endpoint = 'accounts/'.$account_id.'users';
+        $this->endpoint = 'accounts/'.$accountId.'users';
         return $this->call('POST',$this->endpoint,$params);
     }
     
     /**
-     * @param $account_id
+     * @param $accountId
      * @param $id
      * @param $params
      * @return mixed
      */
-    public function update($account_id,$id,$params)
+    public function update($accountId,$id,$params)
     {
-        $this->endpoint = 'accounts/'.$account_id.'users'.$id;
+        $this->endpoint = 'accounts/'.$accountId.'users'.$id;
         return $this->call('POST',$this->endpoint,$params);
     }
     
     /**
-     * @param $account_id
+     * @param $accountId
      * @param $id
      * @return mixed
      */
-    public function delete($account_id,$id)
+    public function delete($accountId,$id)
     {
-        $this->endpoint = 'accounts/'.$account_id.'users'.$id;
+        $this->endpoint = 'accounts/'.$accountId.'users'.$id;
         return $this->call('DELETE',$this->endpoint);
     }
 }
