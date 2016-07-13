@@ -63,19 +63,8 @@ var_dump($accountService->create($params));
 /**
  * Update an account.
  */
-$params = array(
-    'name' => 'my account name',
-    'firstname'=> 'another firstname',
-    'lastname' => 'another lastname',
-    'mobile' => 11111111,
-    'phone' => 11111111,
-    'address' => 'another address',
-    'address_2' => 'another second address',
-    'zipcode' => '8200',
-    'city' => 'another city name',
-    'cvr_no' => 87654321,
-    'type' => 2
-);
+$params['firstname'] = 'another firname';
+$params['lastname'] = 'another lastname';
 var_dump($accountService->update($accountId,$params));
 
 /**
