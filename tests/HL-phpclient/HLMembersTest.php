@@ -66,4 +66,19 @@ class HLMembersTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('response',$result);
         $this->assertEquals('404',json_decode($result['response'],true)['code']);
     }
+    
+    public function testUpdateMemberWithMissingList()
+    {
+        $result = $this->object->update(12,'member-id',array());
+        var_dump($result);
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
+    
+    public function testdeleteMemberWithMissingList()
+    {
+        $result = $this->object->delete(12,'member-id');
+        $this->assertArrayHasKey('response',$result);
+        $this->assertEquals('404',json_decode($result['response'],true)['code']);
+    }
 }
