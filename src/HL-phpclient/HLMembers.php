@@ -104,4 +104,17 @@ class HLMembers extends HLBase
         $this->endpoint = '/lists'.$listId.'/members/'.$memberId;
         return $this->call('DELETE',$this->endpoint);
     }
+    
+    /**
+     * Bulk import or update members on a list.
+     * @param $listId
+     * @param $params
+     * @param $file
+     * @return mixed
+     */
+    public function import($listId,$params,$file)
+    {
+        $this->endpoint = 'lists/'.$listId.'/import';
+        return $this->call('POST',$this->endpoint,$params,$file);
+    }
 }

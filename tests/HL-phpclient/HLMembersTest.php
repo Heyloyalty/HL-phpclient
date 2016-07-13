@@ -87,4 +87,10 @@ class HLMembersTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('response',$result);
         $this->assertEquals('404',json_decode($result['response'],true)['code']);
     }
+    public function testImportWithMissinglistAndFile()
+    {
+        $result = $this->object->import(12,array(),'file');
+        $this->assertArrayHasKey('error',$result);
+        $this->assertArrayHasKey('error',$result);
+    }
 }
