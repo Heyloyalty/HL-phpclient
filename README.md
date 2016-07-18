@@ -23,7 +23,7 @@ use Phpclient\HLClient;
 
 $client = new HLClient('dkdndssgs','476yrjdnsgGYFTRTDDD');
 $memberService = new HLMembers($client);
-$members = $memberService->getMembers();
+$members = $memberService->getMembers(12);
 var_dump($members);
 ```
 
