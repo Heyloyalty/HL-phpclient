@@ -1,11 +1,3 @@
-/*
-* This file is part of the hl-phpclient package.
-*
-* (c) René Skou <skou.rene@gmail.com>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
 <?php
 require('vendor/autoload.php');
 use Phpclient\HLClient;

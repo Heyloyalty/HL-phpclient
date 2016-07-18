@@ -6,9 +6,9 @@ use Phpclient\HLMembers;
  * Import examples showing have to import new members or update existing ones.
  * You will need to fill out the variables below to test these examples.
  */
-$apiKey = 'DTd7K5yfQFgyLcTS';
-$apiSecret = 'zo8z8pRy0bRKqMxojcq0t1jVjXzE623L';
-$listId = 3753;
+$apiKey = 'api-key';
+$apiSecret = 'api-secret';
+$listId = 'list_id';
 $client = new HLClient($apiKey,$apiSecret);
 $memberService = new HLMembers($client);
 $params = array(
@@ -20,7 +20,7 @@ $params = array(
         ),
         'skip_header_line' => false,
         'trigger_autoresponder' => false,
-        'sendErrorsTo' => 'skou.rene@gmail.com'
+        'sendErrorsTo' => 'your-email'
 );
 $result = $memberService->import($listId,$params,realpath('simple-member.csv'));
 var_dump($result);
