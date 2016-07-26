@@ -24,3 +24,4 @@ $params = array(
 );
 $result = $memberService->import($listId,$params,realpath('simple-member.csv'));
 var_dump($result);
+
