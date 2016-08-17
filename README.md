@@ -7,7 +7,7 @@ The client also has methods for using reseller endpoints, [how to become a resel
 Accounts
 Account users
 
-This client contains all methods for interacting with Heyloyalty api except the import method on lists, it will be included along with examples soon.
+This client contains all methods for interacting with Heyloyalty api.
 
 
 ## Installation
@@ -21,9 +21,10 @@ Api key and secret are required from your [Heyloyalty account](http://heyloyalty
 use Phpclient\HLMembers;
 use Phpclient\HLClient;
 
-$client = new HLClient('dkdndssgs','476yrjdnsgGYFTRTDDD');
+$client = new HLClient('your-api-key','your-api-secret');
 $memberService = new HLMembers($client);
-$members = $memberService->getMembers(12);
+$listId = 12;
+$members = $memberService->getMembers($listId);
 var_dump($members);
 ```
 
