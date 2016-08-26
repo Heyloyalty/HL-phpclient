@@ -101,7 +101,7 @@ class HLMembers extends HLBase
      */
     public function delete($listId,$memberId)
     {
-        $this->endpoint = '/lists'.$listId.'/members/'.$memberId;
+        $this->endpoint = 'lists/'.$listId.'/members/'.$memberId;
         return $this->call('DELETE',$this->endpoint);
     }
     
