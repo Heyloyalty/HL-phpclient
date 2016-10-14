@@ -38,8 +38,12 @@ class HLCurlHandler
         $postFields = $this->buildOneDimensionArray($postFields);
         
         if (!is_null($file)) {
-            $postFields['file'] = curl_file_create($file, 'text/csv', 'file');
-            array_push($headers, 'Content-type: multipart/form-data');
+			if (function_exists('curl_file_create')) {
+				$postFields['file'] = curl_file_create($file, 'text/csv', 'file');
+			} else {
+				$postFields['file'] = '@' . realpath($file);
+			}
+			array_push($headers, 'Content-type: multipart/form-data');
         }
         
         switch ($requestType) {
@@ -60,7 +64,9 @@ class HLCurlHandler
             case 'POST':
                 curl_setopt($curl, CURLOPT_URL, $url);
                 curl_setopt($curl, CURLOPT_POST, true);
-                curl_setopt($curl,CURLOPT_SAFE_UPLOAD,false);
+                if (function_exists('curl_file_create')) {
+					curl_setopt($curl, CURLOPT_SAFE_UPLOAD,false);
+				}
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $postFields);
                 break;
         }
