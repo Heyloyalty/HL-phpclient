@@ -1,5 +1,5 @@
 {
-  "name": "rochadk/hl-phpclient",
+  "name": "heyloyalty/hl-phpclient",
   "description": "php client for heyloyalty rest api",
   "license": "GPL-2.0",
   "homepage": "https://github.com/Heyloyalty/api",
