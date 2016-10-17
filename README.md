@@ -1,7 +1,7 @@
 <img src="https://travis-ci.org/SkouRene/HL-phpclient.svg?branch=master" /> [![Code Climate](https://codeclimate.com/github/SkouRene/HL-phpclient/badges/gpa.svg)](https://codeclimate.com/github/SkouRene/HL-phpclient) [![codecov](https://codecov.io/gh/SkouRene/HL-phpclient/branch/master/graph/badge.svg)](https://codecov.io/gh/SkouRene/HL-phpclient)
 
 # HL-phpclient
-Php client for heyloyalty api. Please note, that this is a backwardcompatible fork of the original client
+Php client for heyloyalty api.
 
 The client also has methods for using reseller endpoints, [how to become a reseller](http://heyloyalty.com/partner)
 Accounts
