@@ -39,11 +39,11 @@ class HLMembers extends HLBase
     public function getMemberByEmail($listId,$email)
     {
         $filter = array(
-            'filter' => [
-                'email' => [
-                    'eq' => [$email]
-                ]
-            ]
+            'filter' => array (
+                'email' => array ( 
+                    'eq' => array( $email )
+                )
+            )
         );
         $this->endpoint = 'lists/'.$listId.'/members';
         return $this->call('GET',$this->endpoint,$filter);
