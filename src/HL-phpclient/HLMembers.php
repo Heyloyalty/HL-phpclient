@@ -45,8 +45,7 @@ class HLMembers extends HLBase
                 ]
             ]
         );
-        $this->endpoint = 'lists/'.$listId.'/members';
-        return $this->call('GET',$this->endpoint,$filter);
+        return $this->getMembersByFilter($listId,$filter);
     }
     
     /**
