@@ -99,4 +99,16 @@ class HLProductFeed extends HLBase
         $this->endpoint = 'integrations/productfeed/'.$id;
         return $this->call('DELETE',$this->endpoint);
     }
+
+    /**
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function startSync($id)
+    {
+        $this->endpoint = 'integrations/productfeed/refresh';
+        $params = array('id' => $id);
+        return $this->call('PUT',$this->endpoint, $params);
+    }
 }
