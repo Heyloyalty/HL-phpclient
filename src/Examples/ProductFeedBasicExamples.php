@@ -88,3 +88,8 @@ var_dump($feedService->createMapping($params));
  * Update a product feed mapping.
  */
 var_dump($feedService->updateMapping($productFeedId,$params));
+
+/**
+ * Start sync of products from productfeed by id
+ */
+var_dump($feedService->startSync($productFeedId));
