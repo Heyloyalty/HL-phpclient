@@ -3,8 +3,8 @@ require('vendor/autoload.php');
 use Phpclient\HLClient;
 use Phpclient\HLWebhookCategory;
 
-$apiKey = 'dRwcwjQr1Z4TM7WT';
-$apiSecret = 'jqKlhxJAdEcBt6vQDUCa0zW3vKy5LuQA';
+$apiKey = 'your-api-key';
+$apiSecret = 'your-api-secret';
 $client = new HLClient($apiKey,$apiSecret);
 $categoryService = new HLWebhookCategory($client);
 
