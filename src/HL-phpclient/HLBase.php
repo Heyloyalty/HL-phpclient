@@ -12,9 +12,9 @@
  */
 class HLBase extends HLCurlHandler
 {
-    private $signature, $date,$path;
+    protected $signature, $date,$path;
     protected $endpoint;
-    const HOST = 'https://api.heyloyalty.com/';
+    const HOST = 'http://zumoapi.dev/';
 
     /**
      * @param $type
