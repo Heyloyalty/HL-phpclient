@@ -61,11 +61,11 @@ class HLWebhooks extends HLBase
     protected function setActiveWebhooks(array $settings)
     {
         $availableTriggers = array('subscribe' => 0, 'update' => 0, 'unsubscribe' => 0, 'spamComplaint' => 0, 'click' => 0, 'open' => 0, 'hardbounce' => 0);
-        foreach ($settings as $setting => $active) {
+        foreach ($settings as $key => $setting) {
             if (!isset($availableTriggers[$setting])) {
                 throw new Exception('Invalid setting supplied for webhooks: ' . $setting);
             }
-            $availableTriggers[$setting] = $active;
+            $availableTriggers[] = $setting;
         }
         return $availableTriggers;
     }

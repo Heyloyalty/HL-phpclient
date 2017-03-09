@@ -29,7 +29,7 @@ class HLAccountUsers extends HLBase
      */
     public function getUsers($accountId)
     {
-        $this->endpoint = 'accounts/'.$accountId.'users';
+        $this->endpoint = 'accounts/'.$accountId.'/users';
         return $this->call('GET',$this->endpoint);
     }
     
@@ -41,7 +41,7 @@ class HLAccountUsers extends HLBase
      */
     public function getUser($id,$accountId)
     {
-        $this->endpoint = 'accounts/'.$accountId.'users'.$id;
+        $this->endpoint = 'accounts/'.$accountId.'/users/'.$id;
         return $this->call('GET',$this->endpoint);
     }
     
@@ -53,7 +53,7 @@ class HLAccountUsers extends HLBase
      */
     public function create($accountId,$params)
     {
-        $this->endpoint = 'accounts/'.$accountId.'users';
+        $this->endpoint = 'accounts/'.$accountId.'/users';
         return $this->call('POST',$this->endpoint,$params);
     }
     
@@ -66,7 +66,7 @@ class HLAccountUsers extends HLBase
      */
     public function update($accountId,$id,$params)
     {
-        $this->endpoint = 'accounts/'.$accountId.'users'.$id;
+        $this->endpoint = 'accounts/'.$accountId.'/users/'.$id;
         return $this->call('POST',$this->endpoint,$params);
     }
     
@@ -78,7 +78,7 @@ class HLAccountUsers extends HLBase
      */
     public function delete($accountId,$id)
     {
-        $this->endpoint = 'accounts/'.$accountId.'users'.$id;
+        $this->endpoint = 'accounts/'.$accountId.'/users/'.$id;
         return $this->call('DELETE',$this->endpoint);
     }
 }
