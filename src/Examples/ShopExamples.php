@@ -20,7 +20,7 @@ $params = [
 ];
 
 // Get shops on a list
-var_dump($webhookService->getshopss($listId));
+var_dump($webhookService->getShops($listId));
 
 // Create new shops on a specific list
 var_dump($webhookService->createShops($listId, $params));
