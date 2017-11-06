@@ -33,6 +33,19 @@ class HLMembers extends HLBase
     
     /**
      * @param $listId
+     * @param $perpage
+     * @param $page
+     * @return mixed
+     */
+     public function getPagedMembers($listId, $perpage=50, $page=1)
+     {
+         $pages = ['perpage' => $perpage, 'page' => $page];
+         $this->endpoint = 'lists/'.$listId.'/members?perpage=' . $perpage . '&page=' . $page;
+         return $this->call('GET',$this->endpoint, $pages);
+     }
+
+    /**
+     * @param $listId
      * @param $email
      * @return mixed
      */
