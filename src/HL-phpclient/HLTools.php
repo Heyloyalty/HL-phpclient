@@ -17,9 +17,9 @@ class HLTools extends HLBase
     /**
      * HLLogin constructor.
      */
-    public function __construct(HLClient $loginClient)
+    public function __construct(HLClient $client)
     {
-        $this->setToolsClient($loginClient);
+        $this->setToolsClient($client);
     }
 
     /**
