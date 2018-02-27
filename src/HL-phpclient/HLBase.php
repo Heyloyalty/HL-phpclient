@@ -47,9 +47,9 @@ class HLBase extends HLCurlHandler
     }
 
     /**
-     * @param HLLoginClient $loginClient
+     * @param HLToolsClient $loginClient
      */
-    protected function setLoginClient(HLClient $client)
+    protected function setToolsClient(HLClient $client)
     {
         $this->path = 'tools/v1/';
         $this->setSignature($client->key, $client->secret);
