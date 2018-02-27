@@ -12,14 +12,14 @@
  * Class HLLogin
  * @package Phpclient
  */
-class HLLogin extends HLBase
+class HLTools extends HLBase
 {
     /**
      * HLLogin constructor.
      */
     public function __construct(HLClient $loginClient)
     {
-        $this->setLoginClient($loginClient);
+        $this->setToolsClient($loginClient);
     }
 
     /**
