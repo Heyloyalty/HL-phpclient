@@ -10,6 +10,8 @@ $apiKey = 'your-api-key';
 $apiSecret = 'your-api-secret';
 $listId = 'your list id';
 $memberId = 'your-member-id';
+$perPage = 'size of the page';
+$page = 'current page';
 $client = new HLClient($apiKey,$apiSecret);
 $memberService = new HLMembers($client);
 
@@ -21,6 +23,11 @@ var_dump($result);
 // get a specifik member from a list
 $result = $memberService->getMember($listId,$memberId);
 var_dump('Get a specifik member from a list');
+var_dump($result);
+
+// get paged members from a list
+$result = $memberService->getPagedMembers($listId, $perPage, $page);
+var_dump('Get paged members from a list');
 var_dump($result);
 
 // get member by email
