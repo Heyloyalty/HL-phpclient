@@ -43,7 +43,7 @@ class HLTools extends HLBase
      * @param $file
      * @return mixed
      */
-    public function sendfile($email, $params, $file)
+    public function sendFile($email, $params, $file)
     {
         $this->endpoint = 'sendfile/' . $email;
         return $this->call('POST', $this->endpoint, $params, $file);
