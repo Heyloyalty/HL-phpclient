@@ -25,7 +25,7 @@ class HLTools extends HLBase
     /**
      * @codeCoverageIgnore
      * Gets user information
-     * Usage: Https://api1.heyloyalty.com/tools/v1
+     * Usage: Https://api.heyloyalty.com/tools/v1
      * @param $credentials
      * @return mixed
      */
@@ -38,7 +38,7 @@ class HLTools extends HLBase
     /**
      * @codeCoverageIgnore
      * Send import file
-     * Usage: Https://api1.heyloyalty.com/tools/v1
+     * Usage: Https://api.heyloyalty.com/tools/v1
      * @param $params
      * @param $file
      * @return mixed
