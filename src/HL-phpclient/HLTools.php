@@ -25,7 +25,7 @@ class HLTools extends HLBase
     /**
      * @codeCoverageIgnore
      * Gets user information
-     * Usage: Https://api1.heyloyalty.com/tools/v1
+     * Usage: Https://api.heyloyalty.com/tools/v1
      * @param $credentials
      * @return mixed
      */
@@ -33,6 +33,20 @@ class HLTools extends HLBase
     {
         $this->endpoint = 'authorize';
         return $this->call('POST', $this->endpoint, $credentials);
+    }
+    
+    /**
+     * @codeCoverageIgnore
+     * Send import file
+     * Usage: Https://api.heyloyalty.com/tools/v1
+     * @param $params
+     * @param $file
+     * @return mixed
+     */
+    public function sendFile($email, $params, $file)
+    {
+        $this->endpoint = 'sendfile/' . $email;
+        return $this->call('POST', $this->endpoint, $params, $file);
     }
 
 }
