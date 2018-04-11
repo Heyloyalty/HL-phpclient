@@ -8,7 +8,7 @@ use Phpclient\HLLists;
  */
 $apiKey = 'your-api-key';
 $apiSecret = 'your-api-secret';
-$listId = 'your list id';
+$listId = 'your-list-id';
 $memberId = 'your-member-id';
 $client = new HLClient($apiKey,$apiSecret);
 $listsService = new HLLists($client);
@@ -27,35 +27,128 @@ var_dump($listsService->getList($listId));
  * Create a list.
  */
 
-$params = array(
-    '0' => [
-        'type' => 'fixed',
-        'name' => 'email',
+$params = [
+    'name' => 'Api test liste',
+    'country_id' => 1,
+    'duplicates' => 'disallow',
+    'fields' => [
+        [
+            'type' => 'fixed',
+            'name' => 'email',
+            'format' => 'text'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'firstname',
+            'format' => 'text'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'lastname',
+            'format' => 'text'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'mobile',
+            'format' => 'number'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'sex',
+            'format' => 'choice'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'birthdate',
+            'format' => 'date'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'country',
+            'format' => 'choice'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'city',
+            'format' => 'text'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'address',
+            'format' => 'text'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'postalcode',
+            'format' => 'number'
+        ],
+        [
+            'type' => 'fixed',
+            'name' => 'reference',
+            'format' => 'text'
+        ],
+        [
+        'type' => 'custom',
+        'name' => 'customer_id',
+        'label' => 'Kunde id',
+        'format' => 'number'
+    ],
+    [
+        'type' => 'custom',
+        'name' => 'customer_type',
+        'label' => 'Kunde type',
         'format' => 'text'
     ],
-    '1' => [
-        'type' => 'fixed',
-        'name' => 'mobile',
-        'format' => 'Number'
+    [
+        'format' => 'number',
+        'name' => 'total_orders',
+        'label' => 'Total antal ordre',
+        'type' => 'custom'
     ],
-    '2' => [
-        'type' => 'custom',
-        'name' => 'subscriber_no',
-        'format' => 'text',
-        'label' => 'Subscriber no',
-        'fallback' => '',
-        'order' => 2
+    [
+        'format' => 'number',
+        'name' => 'total_products_bought',
+        'label' => 'Total antal produkter købt',
+        'type' => 'custom'
     ],
-    '3' => [
-        'type' => 'custom',
-        'name' => 'name1',
-        'format' => 'text',
-        'label' => 'Name1',
-        'fallback' => '',
-        'order' => 3
+    [
+        'format' => 'number',
+        'name' => 'average_number_of_products',
+        'label' => 'Gennemsnitlig antal produkter',
+        'type' => 'custom'
+    ],
+    [
+        'format' => 'number',
+        'name' => 'average_spent_per_order',
+        'label' => 'Gennemsnitlig pris per order',
+        'type' => 'custom'
+    ],
+    [
+        'format' => 'number',
+        'name' => 'spent_last_order',
+        'label' => 'Brugt ved sidste order',
+        'type' => 'custom'
+    ],
+    [
+        'format' => 'number',
+        'name' => 'total_spent',
+        'label' => 'Total forbrug',
+        'type' => 'custom'
+    ],
+    [
+        'format' => 'date',
+        'name' => 'last_order_date',
+        'label' => 'Sidste købs dato',
+        'type' => 'custom'
+    ],
+    [
+        'format' => 'date',
+        'name' => 'first_order_date',
+        'label' => 'Første købs dato',
+        'type' => 'custom'
     ]
-);
-
+    ]
+]; 
 var_dump($listsService->create($params));
 
 /**
