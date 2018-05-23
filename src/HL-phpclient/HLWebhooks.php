@@ -1,4 +1,5 @@
 <?php namespace Phpclient;
+use \Exception;
 
 class HLWebhooks extends HLBase
 {
@@ -60,10 +61,10 @@ class HLWebhooks extends HLBase
      */
     protected function setActiveWebhooks(array $settings)
     {
-        $availableTriggers = array('subscribe' => 0, 'update' => 0, 'unsubscribe' => 0, 'spamComplaint' => 0, 'click' => 0, 'open' => 0, 'hardbounce' => 0);
+        $availableTriggers = array('subscribe' => 0, 'update' => 0, 'unsubscribe' => 0, 'spamComplaint' => 0, 'click' => 0, 'open' => 0, 'hardbounce' => 0, 'sent' => 0);
         foreach ($settings as $key => $setting) {
             if (!isset($availableTriggers[$setting])) {
-                throw new Exception('Invalid setting supplied for webhooks: ' . $setting);
+                throw new \Exception('Invalid setting supplied for webhooks: ' . $setting);
             }
             $availableTriggers[] = $setting;
         }
