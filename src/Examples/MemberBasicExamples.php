@@ -73,3 +73,8 @@ var_dump($result);
 $result = $memberService->delete($listId,'your-member-id-here');
 var_dump('delete member on a list');
 var_dump($result);
+
+// obscure a member on list
+$result = $memberService->obscure($listId,'your-member-id-here');
+var_dump('obscure member on a list');
+var_dump($result);
