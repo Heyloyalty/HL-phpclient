@@ -75,6 +75,7 @@ var_dump('delete member on a list');
 var_dump($result);
 
 // obscure a member on list
+// This will overwrite given member, with data so all references is gone, and unsubcribe from the list given.
 $result = $memberService->obscure($listId,'your-member-id-here');
 var_dump('obscure member on a list');
 var_dump($result);
