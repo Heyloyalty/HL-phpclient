@@ -129,4 +129,17 @@ class HLMembers extends HLBase
         $this->endpoint = 'lists/'.$listId.'/import';
         return $this->call('POST',$this->endpoint,$params,$file);
     }
+
+    /**
+     * Obscure member on list.
+     * @param $listId
+     * @param $memberId
+     * @return mixed
+     */
+    public function obscure($listId, $memberId)
+    {
+        return $this->call('DELETE', "lists/{$listId}/members/{$memberId}", [
+            'obscureMemberData' => true
+        ]);
+    }
 }
