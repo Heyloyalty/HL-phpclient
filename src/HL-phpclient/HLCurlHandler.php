@@ -56,6 +56,11 @@ class HLCurlHandler
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST,'PUT');
                 curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postFields));
                 break;
+            case 'PATCH':
+                curl_setopt($curl, CURLOPT_URL, $url);
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
+                curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postFields));
+                break;
             case 'POST':
                 curl_setopt($curl, CURLOPT_URL, $url);
                 curl_setopt($curl, CURLOPT_POST, true);

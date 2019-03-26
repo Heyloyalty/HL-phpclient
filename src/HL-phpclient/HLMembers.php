@@ -102,8 +102,8 @@ class HLMembers extends HLBase
      */
     public function update($listId,$memberId,array $fields)
     {
-        $this->endpoint = 'lists/'.$listId.'/members/'.$memberId;
-        return $this->call('PUT',$this->endpoint,$fields);
+        $this->endpoint = 'lists/' . $listId . '/members/' . $memberId;
+        return $this->call('PUT', $this->endpoint, $fields);
     }
     
     /**
@@ -141,5 +141,19 @@ class HLMembers extends HLBase
         return $this->call('DELETE', "lists/{$listId}/members/{$memberId}", [
             'obscureMemberData' => true
         ]);
+    }
+
+    public function patch($listId, $memberId, array $fields)
+    {
+        return $this->call('PATCH', 'lists/' . $listId . '/members/' . $memberId, $fields);
+    }
+
+    public function upsert($listId, $uniqueField, array $fields)
+    {
+        $request = [
+            'unique_field' => $uniqueField,
+            'member' => $fields
+        ];
+        return $this->call('POST', 'lists/' . $listId . '/members/upsert', $request);
     }
 }
