@@ -7,7 +7,7 @@ use Phpclient\HLMembers;
  */
 $apiKey = 'api-key';
 $apiSecret = 'api-secret';
-$listId = 123;
+$listId = 1234;
 $memberId = 'member-id';
 $client = new HLClient($apiKey,$apiSecret);
 $memberService = new HLMembers($client);
@@ -43,4 +43,37 @@ $fields = array(
 
 $result = $memberService->update($listId,$memberId,$fields);
 var_dump('update member with multi choice');
+var_dump($result);
+
+
+/**
+ * Patch a member.
+ *
+ * Requirements are just like put but instead of removing fields not parsed we just update the fields specified.
+ * This also ensures that we do not need to parse email or mobile field.
+ *
+ */
+$fields = [
+    'firstname' => 'test'
+];
+
+$result = $memberService->patch($listId, $memberId, $fields);
+var_dump('Patch member with firstname');
+var_dump($result);
+
+
+/**
+ * Upsert member. 
+ *
+ * Upsert member takes fields as update as well as a unique field. This unique field must be part of the fields sent.
+ * Note that we get an error if there's more than 1 member on the specific list with the specific field value so firstname is normally not a good idea for unique field.
+ *
+ */
+$uniqueField = 'firstname';
+$fields = [
+    'firstname' => 'test',
+    'mobile' => 12345678
+];
+$result = $memberService->upsert($listId, $uniqueField, $fields);
+var_dump('Upsert member with unique firstname');
 var_dump($result);
