@@ -71,4 +71,14 @@ class HLLists extends HLBase
         $this->endpoint = 'lists/'.$listId;
         return $this->call('DELETE',$this->endpoint);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCountries()
+    {
+        $this->endpoint = 'lists/countries';
+        return $this->call('GET',$this->endpoint);
+    }
+
 }
