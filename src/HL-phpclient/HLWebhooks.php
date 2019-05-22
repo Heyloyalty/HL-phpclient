@@ -32,7 +32,7 @@ class HLWebhooks extends HLBase
      */
     public function update($listId, $webhookId, $url, array $settings=array(), $contactEmail = '')
     {
-        $this->endpoint = 'lists/' . $listId . '/webhooks/' . $webhookdId;
+        $this->endpoint = 'lists/' . $listId . '/webhooks/' . $webhookId;
         $data = $this->setupData($url, $settings, $contactEmail);
         return $this->call('PUT', $this->endpoint, $data);
     }
