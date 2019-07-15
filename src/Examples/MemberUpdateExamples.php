@@ -4,6 +4,7 @@ use Phpclient\HLClient;
 use Phpclient\HLMembers;
 /**
  * Member update exsamples,showing how you can update members when you have difference fields
+ * Updating unsubscribed members will reactivate these members. We suggest creating a new member instead
  */
 $apiKey = 'api-key';
 $apiSecret = 'api-secret';
