@@ -105,6 +105,7 @@ class HLMembers extends HLBase
         $this->endpoint = 'lists/' . $listId . '/members/' . $memberId;
         return $this->call('PUT', $this->endpoint, $fields);
     }
+    /* updating unsubscribed members will reactive these. We suggest creating new members instead */
     
     /**
      * @param $listId
