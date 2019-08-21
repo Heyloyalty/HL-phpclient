@@ -103,7 +103,7 @@ class HLWebhookCategory extends HLBase
      */
     public function addExternalField($key, $value)
     {
-        $this->messageBuilder['Context']['ExternalFields'][$key] = $value;
+        $this->messageBuilder['ExternalFields'][$key] = $value;
     }
 
     /*
