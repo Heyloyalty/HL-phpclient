@@ -31,9 +31,9 @@ class HLBase extends HLCurlHandler
     /**
      * @param HLClient $client
      */
-    protected function setClient(HLClient $client)
+    protected function setClient(HLClient $client, $version = 1)
     {
-        $this->path = 'loyalty/v1/';
+        $this->path = 'loyalty/v'.$version.'/';
         $this->setSignature($client->key,$client->secret);
     }
 
