@@ -111,4 +111,14 @@ class HLProductFeed extends HLBase
         $params = array('id' => $id);
         return $this->call('PUT',$this->endpoint, $params);
     }
+
+    public function fetchProduct($id, $productId)
+    {
+        $this->endpoint = 'integrations/productfeed/getproductbyid';
+        $params = [
+            'productfeedId' => $id,
+            'productId' => $productId
+        ];
+        return $this->call('GET',$this->endpoint,$params);
+    }
 }
