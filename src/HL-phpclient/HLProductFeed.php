@@ -6,7 +6,7 @@
          *
          * For the full copyright and license information, please view the LICENSE
          * file that was distributed with this source code.
-         */
+    */
 /**
  * Class HLProductFeed
  * @package Phpclient
@@ -30,7 +30,7 @@ class HLProductFeed extends HLBase
     public function getProductFeeds($params = array())
     {
         $this->endpoint = 'integrations/productfeed';
-        return $this->call('GET',$this->endpoint,$params);
+        return $this->call('GET', $this->endpoint, $params);
     }
 
     /**
@@ -39,10 +39,10 @@ class HLProductFeed extends HLBase
      * @param $params
      * @return mixed
      */
-    public function getProductFeedMapping($id,$params = array())
+    public function getProductFeedMapping($id, $params = array())
     {
-        $this->endpoint = 'integrations/productfeed-mapping/'.$id;
-        return $this->call('GET',$this->endpoint,$params);
+        $this->endpoint = 'integrations/productfeed-mapping/' . $id;
+        return $this->call('GET', $this->endpoint, $params);
     }
 
     /**
@@ -53,7 +53,7 @@ class HLProductFeed extends HLBase
     public function create($params)
     {
         $this->endpoint = 'integrations/productfeed';
-        return $this->call('POST',$this->endpoint,$params);
+        return $this->call('POST', $this->endpoint, $params);
     }
 
     /**
@@ -64,7 +64,7 @@ class HLProductFeed extends HLBase
     public function createMapping($params)
     {
         $this->endpoint = 'integrations/productfeed-mapping';
-        return $this->call('POST',$this->endpoint,$params);
+        return $this->call('POST', $this->endpoint, $params);
     }
 
     /**
@@ -73,10 +73,10 @@ class HLProductFeed extends HLBase
      * @param $params
      * @return mixed
      */
-    public function update($id,$params)
+    public function update($id, $params)
     {
-        $this->endpoint = 'integrations/productfeed/'.$id;
-        return $this->call('PUT',$this->endpoint,$params);
+        $this->endpoint = 'integrations/productfeed/' . $id;
+        return $this->call('PUT', $this->endpoint, $params);
     }
 
     /**
@@ -85,10 +85,10 @@ class HLProductFeed extends HLBase
      * @param $params
      * @return mixed
      */
-    public function updateMapping($id,$params)
+    public function updateMapping($id, $params)
     {
-        $this->endpoint = 'integrations/productfeed-mapping/'.$id;
-        return $this->call('GET',$this->endpoint,$params);
+        $this->endpoint = 'integrations/productfeed-mapping/' . $id;
+        return $this->call('GET', $this->endpoint, $params);
     }
 
     /**
@@ -97,10 +97,10 @@ class HLProductFeed extends HLBase
      * @param $params
      * @return mixed
      */
-    public function delete($id,$params = array())
+    public function delete($id, $params = array())
     {
-        $this->endpoint = 'integrations/productfeed/'.$id;
-        return $this->call('DELETE',$this->endpoint,$params);
+        $this->endpoint = 'integrations/productfeed/' . $id;
+        return $this->call('DELETE', $this->endpoint, $params);
     }
 
     /**
@@ -112,7 +112,7 @@ class HLProductFeed extends HLBase
     {
         $this->endpoint = 'integrations/productfeed/refresh';
         $params = array('id' => $id);
-        return $this->call('PUT',$this->endpoint, $params);
+        return $this->call('PUT', $this->endpoint, $params);
     }
 
     /**
@@ -122,13 +122,13 @@ class HLProductFeed extends HLBase
      * @param $params
      * @return mixed
      */
-    public function fetchProduct($id, $productId,$params = array())
+    public function fetchProduct($id, $productId, $params = array())
     {
         $this->endpoint = 'integrations/productfeed/getproductbyid';
-        $params = array_merge($params, [
+        $params = array_merge($params, array(
             'productfeedId' => $id,
             'productId' => $productId
-        ]);
-        return $this->call('GET',$this->endpoint,$params);
+        ));
+        return $this->call('GET', $this->endpoint, $params);
     }
 }
