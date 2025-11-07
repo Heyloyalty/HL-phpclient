@@ -10,7 +10,7 @@ $client = new HLClient($apiKey, $apiSecret);
 $webhookService = new HLWebhooks($client);
 
 // These are the setting you can subsribe to getting webhooks from. Simply set the value to 1 for the events you want to subscribe to (default is 0 if they are not filled)
-$settings = ['subscribe', 'update', 'unsubscribe', 'spamComplaint', 'click', 'open', 'hardbounce', 'sent'];
+$settings = ['subscribe', 'update', 'unsubscribe', 'spamComplaint', 'click', 'open', 'hardbounce', 'sent', 'subscribe_webpush', 'obscure', 'transaction'];
 
 
 // Get webhooks setup on a list
@@ -25,5 +25,3 @@ var_dump($webhookService->update($listId, $url, $settings, 'newEmail@mydomain.dk
 
 // Delete a webhook on a specific list
 var_dump($webhookService->delete($listId, 'webhookIdFetchedByGet'));
-
-
