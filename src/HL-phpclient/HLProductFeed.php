@@ -36,6 +36,17 @@ class HLProductFeed extends HLBase
     /**
      *
      * @param $id
+     * @return mixed
+     */
+    public function getProductFeed(int $id): mixed
+    {
+        $this->endpoint = 'integrations/productfeed/' . $id;
+        return $this->call('GET', $this->endpoint);
+    }
+
+    /**
+     *
+     * @param $id
      * @param $params
      * @return mixed
      */
